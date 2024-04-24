@@ -57,7 +57,15 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        $category=Category::findOrFail($id);
+        // $category=Category::findOrFail($id);
+        $category=Category::find($id);
+        if ($category == null){
+            return redirect()->route('categories.index')->with(
+                [
+                    'status'=>'id not found'
+                ]
+            );
+        }
         return view('categories.edit',compact('category'));
     }
 
@@ -69,7 +77,16 @@ class CategoryController extends Controller
         $this->validate($request,[
             'category'=> 'required'
         ]);
-        $category=Category::findOrFail($id);
+        // $category=Category::findOrFail($id);
+        $category=Category::find($id);
+        if ($category == null){
+            return redirect()->route('categories.index')->with(
+                [
+                    'status'=>'id sudah tidak ada'
+                ]
+            );
+        }
+
         $category->update(
             [
                 'name' => $request->category
@@ -83,6 +100,19 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category=Category::find($id);
+        if ($category == null){
+            return redirect()->route('categories.index')->with(
+                [
+                    'status'=>'id sudah tidak ada'
+                ]
+            );
+        }
+        $category->delete();
+        return redirect()->route('categories.index')->with(
+            [
+                'status'=>'Berhasil Delete'
+            ]
+        );
     }
 }

@@ -19,9 +19,6 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
-                  {{-- <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li> --}}
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Master Data
@@ -33,19 +30,18 @@
                       <li><a class="dropdown-item" href="#">User</a></li>
                     </ul>
                   </li>
-                  {{-- <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                  </li> --}}
                 </ul>
-                {{-- <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form> --}}
               </div>
             </div>
           </nav>
     </div>
+
     <div class="container">
+        @if (session()->has('status'))
+            <div class="alert alert-primary" role="alert">
+                {{session('status')}}
+            </div>
+        @endif
         <div class="card">
             <div Class="card-header">
                 <a href="{{Route('categories.create')}}" class="btn btn-md btn-success">Tambah Category</a>
@@ -76,14 +72,6 @@
             </div>
           </div>
     </div>
-
-    {{-- <h1>Hello, berada di halaman {{$title}}</h1>
-    <a href="{{Route('categories.create')}}" class="btn btn-md btn-success">Tambah Category</a>
-    Category :
-    <br>
-    @foreach ($categories as $item)
-        {{$item->name}} </br>
-    @endforeach --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

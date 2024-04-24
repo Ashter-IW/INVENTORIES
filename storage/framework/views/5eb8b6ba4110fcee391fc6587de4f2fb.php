@@ -8,6 +8,7 @@
   </head>
   <body>
     <div class="container">
+        
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
               <a class="navbar-brand" href="<?php echo e(Route('categories.index')); ?>">Inventories</a>
@@ -19,7 +20,6 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
-                  
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Master Data
@@ -31,9 +31,7 @@
                       <li><a class="dropdown-item" href="#">User</a></li>
                     </ul>
                   </li>
-                  
                 </ul>
-                
               </div>
             </div>
           </nav>
@@ -48,13 +46,11 @@
               <label for="name" class="form-label">CATEGORY</label>
               <input type="category" class="form-control" id="name" aria-describedby="emailHelp" name="category">
             </div>
-            
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
     </div>
     </div>
-    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>

@@ -19,9 +19,6 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
-                  {{-- <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li> --}}
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Master Data
@@ -33,14 +30,7 @@
                       <li><a class="dropdown-item" href="#">User</a></li>
                     </ul>
                   </li>
-                  {{-- <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                  </li> --}}
                 </ul>
-                {{-- <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form> --}}
               </div>
             </div>
           </nav>
@@ -56,14 +46,6 @@
               <label for="name" class="form-label">CATEGORY</label>
               <input type="category" class="form-control" id="name" aria-describedby="emailHelp" name="category" value="{{old('category',$category->name)}}">
             </div>
-            {{-- <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div> --}}
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
